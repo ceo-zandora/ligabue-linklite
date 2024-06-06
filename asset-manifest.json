@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.df64c257.css",
-    "main.js": "/static/js/main.f849d3ea.js",
-    "static/js/453.707367bc.chunk.js": "/static/js/453.707367bc.chunk.js",
-    "index.html": "/index.html",
-    "main.df64c257.css.map": "/static/css/main.df64c257.css.map",
-    "main.f849d3ea.js.map": "/static/js/main.f849d3ea.js.map",
-    "453.707367bc.chunk.js.map": "/static/js/453.707367bc.chunk.js.map"
+    "main.css": "/ligabue-linklite/static/css/main.848755f8.css",
+    "main.js": "/ligabue-linklite/static/js/main.0cfddae4.js",
+    "index.html": "/ligabue-linklite/index.html",
+    "main.848755f8.css.map": "/ligabue-linklite/static/css/main.848755f8.css.map",
+    "main.0cfddae4.js.map": "/ligabue-linklite/static/js/main.0cfddae4.js.map"
   },
   "entrypoints": [
-    "static/css/main.df64c257.css",
-    "static/js/main.f849d3ea.js"
+    "static/css/main.848755f8.css",
+    "static/js/main.0cfddae4.js"
   ]
 }
