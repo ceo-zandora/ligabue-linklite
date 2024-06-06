@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <script type="module">
+    // Import Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDbXIIWtZq_Y3O6Yyy9aXHr3zNwPZ_NsT8",
+      authDomain: "ligabue-linklite.firebaseapp.com",
+      projectId: "ligabue-linklite",
+      storageBucket: "ligabue-linklite.appspot.com",
+      messagingSenderId: "922169054896",
+      appId: "1:922169054896:web:78f34414906e8818478d75"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function redirectToOriginalUrl() {
+      const path = window.location.pathname.substring(1); // Get the path without the leading '/'
+      if (path) {
+        const docRef = doc(db, "urls", path);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          window.location.href = docSnap.data().originalUrl;
+        } else {
+          document.body.innerHTML = "<p>URL not found.</p>";
+        }
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.location.pathname.length > 1) {
+        redirectToOriginalUrl();
+      }
+    });
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
