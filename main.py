@@ -16,8 +16,8 @@ def main():
         f.write('lnk.zanx.me')
 
     for link in links:
-        html_document = html.format(url=link['originalUrl'])
-        file_path = f"dist/{link['shortUrl']}.html"
+        html_document = html.format(url=link['url'])
+        file_path = f"dist/{link['name']}.html"
 
         with open(file_path, 'w') as f:
             f.write(html_document)
